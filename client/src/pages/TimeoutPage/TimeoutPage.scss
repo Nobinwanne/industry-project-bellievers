@@ -63,15 +63,4 @@ body {
             @include button-hover;
         }
     }
-
-    &__logo {
-        max-width: 15rem;
-        display: block;
-    }
-
-    &__img-container {
-        width: 100%;
-        display: flex;
-        justify-content: center;
-    }
 }

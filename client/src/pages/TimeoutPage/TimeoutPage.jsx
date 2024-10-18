@@ -1,6 +1,7 @@
 import { useEffect } from "react";
 import { Link } from "react-router-dom";
 import "../TimeoutPage/TimeoutPage.scss";
+import Footer from "../../components/Footer/Footer";
 
 function TimeoutPage() {
     //set document title
@@ -34,13 +35,7 @@ function TimeoutPage() {
                         </button>
                     </Link>
                 </div>
-                <div className="static__img-container">
-                    <img
-                        src="/src/assets/icons/Bell Let's Talk white.svg"
-                        alt="Bell Let's Talk Logo"
-                        className="static__logo"
-                    />
-                </div>
+                <Footer />
             </article>
         </>
     );

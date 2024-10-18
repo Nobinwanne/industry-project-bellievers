@@ -1,0 +1,16 @@
+@use "/src/styles/partials/mixins" as *;
+@use "/src/styles/partials/variables" as *;
+@use "/src/styles/partials/global" as *;
+
+.static {
+    &__logo {
+        max-width: 15rem;
+        display: block;
+    }
+
+    &__img-container {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+    }
+}
