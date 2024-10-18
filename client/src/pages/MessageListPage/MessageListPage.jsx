@@ -18,39 +18,15 @@ function MessageListPage() {
     getAllMoments();
   }, [allMoments]);
 
-  const addMoment = async (event) => {
-    try {
-      const form = event.target;
-
-      const newMoment = {
-        name: form.name.value,
-        message: _req.body.message,
-        gift: _req.body.gift,
-        phone: _req.body.phone,
-      };
-
-      await axios.post(`http://localhost:8050/moments`, newMoment);
-      setAllMoments([]);
-    } catch (err) {
-      console.error("Failed to fetch moments list", err);
-    }
-  };
-
-  const submitHandler = (e) => {
-    e.preventDefault();
-    addMoment(e);
-    console.log("Moment added");
-  };
   return (
     <div>
       {allMoments.map((currentMoment, key) => (
         <div key={key}>
-          <div>
-            <p>{currentMoment.id}</p>
-            <p>{currentMoment.name}</p>
-            <p>{currentMoment.message}</p>
-            <p>{currentMoment.gift}</p>
-            <p>{currentMoment.phone}</p>
+          <div className="form__container">
+            <p className="form__name">{currentMoment.name}</p>
+            <p className="form__message">{currentMoment.message}</p>
+            <p className="form__gift">{currentMoment.gift}</p>
+            <p className="form__phone">{currentMoment.phone}</p>
           </div>
         </div>
       ))}
