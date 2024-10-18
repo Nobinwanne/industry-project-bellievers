@@ -16,8 +16,8 @@ function App() {
                 <Route path="/" element={<HomePage />} />
                 <Route path="/timeout" element={<TimeoutPage />} />
                 <Route path="/form" element={<FormPage />} />
-                {/* <Route path="/messages" element={<MessageListPage />} />
-                <Route path="*" element={<NotFoundPage />} /> */}
+                <Route path="/messages" element={<MessageListPage />} />
+                {/* <Route path="*" element={<NotFoundPage />} /> */}
             </Routes>
         </BrowserRouter>
     );
