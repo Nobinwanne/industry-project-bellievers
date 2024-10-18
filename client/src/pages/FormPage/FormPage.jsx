@@ -172,11 +172,20 @@ function FormPage() {
                         <option>$5 for Lunch</option>
                     </select>
                 </label>
-                <label htmlFor="message" className="form__label">
+                <label htmlFor="to" className="form__label">
+                    To
+                    <input
+                        id="to"
+                        type="text"
+                        className="form__input"
+                        placeholder="(123) 456 7890"
+                    />
+                </label>
+                <label htmlFor="from" className="form__label">
                     From
                     <input
-                        id="message"
-                        type="text area"
+                        id="from"
+                        type="text"
                         className="form__input"
                         placeholder="Write your name (optional)"
                     />
