@@ -1,13 +1,19 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import "../FormPage/FormPage.scss";
 import Footer from "../../components/Footer/Footer";
 
 function FormPage() {
+    const [color, setColor] = useState("#00549a");
+
     //set document title
     useEffect(() => {
         document.title = "Send a Mindful Moment";
     }, []);
+
+    useEffect(() => {
+        document.body.style.backgroundColor = color;
+    }, [color]);
 
     // const [redirect, setRedirect] = useState(false);
 
@@ -200,6 +206,8 @@ function FormPage() {
                         type="color"
                         className="form__input form__input--select form__input--color"
                         defaultValue="#00549a"
+                        value={color}
+                        onChange={(e) => setColor(e.target.value)}
                     />
                 </label>
             </form>
