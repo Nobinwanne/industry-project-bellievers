@@ -1,0 +1,25 @@
+
+@use "../../styles/partials/variables" as *;
+@use "../../styles/partials/global" as *;
+
+body {
+    margin: 0;
+    padding: 0;
+  }
+
+.banner{
+    background-color: white;
+    color: $bellBlue;
+    height: 2rem;
+    margin-bottom: 1rem;
+    padding: 0.5rem 0;
+    position: relative;
+    text-align: center;
+    z-index: 20;
+}
+
+a{
+    text-decoration: none;
+    color: $bellBlue;
+    font-weight: 700;
+}
