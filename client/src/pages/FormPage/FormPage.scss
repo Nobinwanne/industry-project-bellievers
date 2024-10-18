@@ -1,0 +1,73 @@
+@use "/src/styles/partials/mixins" as *;
+@use "/src/styles/partials/variables" as *;
+@use "/src/styles/partials/global" as *;
+@use "/src/styles/partials/animations" as *;
+
+.form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    &__title {
+        margin-bottom: 1.5rem;
+    }
+
+    &__box {
+        color: $bellDarkBlue;
+        width: 50%;
+        height: 80%;
+        margin-bottom: 4rem;
+        border: 1rem $bellDarkBlue solid;
+        padding: 2rem;
+        background-color: white;
+        box-shadow: 0.5rem 0.5rem 1rem $graphite;
+    }
+
+    &__label {
+        display: block;
+        font-weight: 900;
+        margin-bottom: 0.7rem;
+    }
+
+    &__input {
+        display: block;
+        width: 90%;
+        margin-top: 0.3rem;
+        font-family: $primary-font;
+        color: gray;
+        padding: 0.5rem;
+        border: 1px solid white;
+        border-radius: 0.3rem 0.3rem;
+        background-color: $light-grey;
+
+        &--select {
+            width: 95%;
+        }
+
+        &--color {
+            height: 5rem;
+        }
+
+        &:focus {
+            outline: none;
+            border: 2px solid $bellBlue;
+        }
+    }
+
+    &__button-container {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+    }
+
+    &__button {
+        @include button;
+        background-color: $bellBlue;
+        color: white;
+
+        &:hover {
+            @include button-hover;
+        }
+    }
+}
