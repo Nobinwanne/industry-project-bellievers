@@ -1,26 +1,41 @@
-
 @use "../../styles/partials/variables" as *;
 @use "../../styles/partials/global" as *;
 
 body {
-    margin: 0;
-    padding: 0;
-  }
-
-.banner{
-    background-color: white;
-    color: $bellBlue;
-    height: 2rem;
-    margin-bottom: 1rem;
-    padding: 0.5rem 0;
-    position: relative;
-    text-align: center;
-    z-index: 20;
-    font-weight: 600;
+  margin: 0;
+  padding: 0;
 }
 
-a{
-    text-decoration: none;
-    color: $bellBlue;
-    font-weight: 800;
+.banner {
+  background-color: white;
+  color: $bellBlue;
+  height: 2rem;
+  margin-bottom: 1rem;
+  padding: 0.5rem 0;
+  position: relative;
+  text-align: center;
+  z-index: 20;
+  font-weight: 600;
+  overflow: hidden; /* Ensures text doesn't overflow visibly */
+}
+
+a {
+  text-decoration: none;
+  color: $bellBlue;
+  font-weight: 800;
+}
+
+.scrolling-text {
+  display: inline-block;
+  white-space: nowrap; /* Prevents text from wrapping */
+  animation: scroll-left 20s linear infinite; /* Animate left scrolling */
+}
+
+@keyframes scroll-left {
+  0% {
+    transform: translateX(100%); /* Start from the right */
+  }
+  100% {
+    transform: translateX(-100%); /* Scroll to the left off-screen */
+  }
 }
