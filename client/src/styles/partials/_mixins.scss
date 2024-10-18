@@ -1,12 +1,26 @@
+@use "./variables" as *;
 
 @mixin tablet {
     @media (min-width: 48rem) {
-      @content;
+        @content;
     }
-  }
-  
-  @mixin desktop {
+}
+
+@mixin desktop {
     @media (min-width: 80rem) {
-      @content;
+        @content;
     }
-  }
+}
+
+@mixin button {
+    color: $bellBlue;
+    font-weight: 900;
+    width: 15rem;
+    padding: 1rem;
+    background-color: white;
+}
+
+@mixin button-hover {
+    background-color: $bellDarkBlue;
+    color: white;
+}
