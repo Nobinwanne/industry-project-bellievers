@@ -1,0 +1,184 @@
+import { useEffect, useState } from "react";
+import axios from "axios";
+import { Link } from "react-router-dom";
+import "../FormPage/FormPage.scss";
+import Footer from "../../components/Footer/Footer";
+
+function FormPage() {
+  const [color, setColor] = useState("#00549a");
+  const [formData, setFormData] = useState({
+    moment: "",
+    message: "",
+    gift: "",
+    recipient: "",
+    name: "",
+    phone: "",
+    length: "",
+  });
+
+  const addMoment = async (event) => {
+    try {
+      const formData = event.target;
+
+      const newMoment = {
+        moment: formData.moment,
+        message: formData.message,
+        gift: formData.gift,
+        recipient: formData.recipient,
+        name: formData.name,
+        phone: formData.phone,
+        length: formData.length,
+      };
+
+      console.log(newMoment);
+
+      await axios.post(`http://localhost:8050/moments`, newMoment);
+      setFormData({
+        moment: "",
+        message: "",
+        gift: "",
+        recipient: "",
+        name: "",
+        phone: "",
+        length: "",
+      });
+    } catch (err) {
+      console.error("Failed to send moment", err);
+    }
+  };
+
+  const submitHandler = (e) => {
+    e.preventDefault();
+    addMoment();
+    console.log("Moment added");
+  };
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData((prevData) => ({
+      ...prevData,
+      [name]: value,
+    }));
+  };
+
+  // Set document title
+  useEffect(() => {
+    document.title = "Send a Mindful Moment";
+  }, []);
+
+  //set document title
+  useEffect(() => {
+    document.title = "Send a Mindful Moment";
+  }, []);
+
+  useEffect(() => {
+    document.body.style.backgroundColor = color;
+  }, [color]);
+
+  return (
+    <div className="form" id="postMoment">
+      <h1 className="form__title">Send A Mindful Moment</h1>
+      <form className="form__box" onSubmit={submitHandler}>
+        <label htmlFor="moment" className="form__label">
+          Take a moment to...
+          <select
+            id="moment"
+            name="moment"
+            value={formData.moment}
+            onChange={handleChange}
+            className="form__input form__input--select"
+          >
+            <option>Select an Action</option>
+            <option>Breathe</option>
+            <option>Smile</option>
+            <option>Laugh</option>
+            <option>Relax</option>
+          </select>
+        </label>
+        <label htmlFor="message" className="form__label">
+          Personal Message
+          <textarea
+            id="message"
+            name="message"
+            value={formData.message}
+            onChange={handleChange}
+            className="form__input form__input--tall"
+            placeholder="Write a personalized message"
+          />
+        </label>
+        <label htmlFor="gift" className="form__label">
+          Gift
+          <select
+            id="gift"
+            name="gift"
+            value={formData.gift}
+            onChange={handleChange}
+            className="form__input form__input--select"
+          >
+            <option>Select a Gift (optional)</option>
+            <option>$5 for Coffee</option>
+            <option>$5 for Me Time</option>
+            <option>$5 for a Massage</option>
+            <option>$5 for Lunch</option>
+          </select>
+        </label>
+        <label htmlFor="to" className="form__label">
+          To
+          <input
+            id="recipient"
+            name="recipient"
+            type="text"
+            value={formData.recipient}
+            onChange={handleChange}
+            className="form__input"
+            placeholder="Recipient's phone number (123) 456 7890"
+          />
+        </label>
+        <label htmlFor="name" className="form__label">
+          From
+          <input
+            id="name"
+            name="name"
+            type="text"
+            value={formData.name}
+            onChange={handleChange}
+            className="form__input"
+            placeholder="Your name (optional)"
+          />
+        </label>
+        <label htmlFor="length" className="form__label">
+          Message Length
+          <select
+            id="length"
+            name="length"
+            value={formData.length}
+            onChange={handleChange}
+            className="form__input form__input--select"
+          >
+            <option>Select Length of Message</option>
+            <option>10 sec</option>
+            <option>30 sec</option>
+            <option>45 sec</option>
+            <option>60 sec</option>
+          </select>
+        </label>
+        <label htmlFor="color" className="form__label">
+          Background Colour
+          <input
+            id="color"
+            type="color"
+            value={color}
+            onChange={handleChange}
+            className="form__input form__input--color"
+          />
+        </label>
+        <div className="form__button-container">
+          <button className="form__button">Send</button>
+        </div>
+      </form>
+      <Footer />
+    </div>
+  );
+}
+
+export default FormPage;

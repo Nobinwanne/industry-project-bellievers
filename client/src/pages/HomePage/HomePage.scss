@@ -1,0 +1,15 @@
+@use "/src/styles/partials/mixins" as *;
+@use "/src/styles/partials/variables" as *;
+@use "/src/styles/partials/global" as *;
+@use "/src/styles/partials/animations" as *;
+
+body {
+    background-color: $bellBlue;
+    color: white;
+    max-height: 100vh;
+    text-align: end;
+}
+
+.logo {
+    max-width: 15rem;
+}
