@@ -29,9 +29,11 @@ function TimeoutPage() {
                 </section>
             </article>
             <article className="static">
-                <button className="static__button">
-                    Send Your Mindful Moment
-                </button>
+                <div className="static__button-container">
+                    <button className="static__button">
+                        Send Your Mindful Moment
+                    </button>
+                </div>
                 <div className="static__img-container">
                     <img
                         src="/src/assets/icons/Bell Let's Talk white.svg"
