@@ -216,7 +216,9 @@ function FormPage() {
                     />
                 </label>
                 <div className="form__button-container">
-                    <button className="form__button">Send</button>
+                    <Link to={`/messages`}>
+                        <button className="form__button">Send</button>
+                    </Link>
                 </div>
             </form>
             <Footer />
