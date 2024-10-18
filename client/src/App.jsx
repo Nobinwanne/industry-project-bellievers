@@ -2,7 +2,7 @@ import Header from "./components/Header/Header";
 import HomePage from "./pages/HomePage/HomePage";
 import TimeoutPage from "./pages/TimeoutPage/TimeoutPage";
 import FormPage from "./pages/FormPage/FormPage";
-// import MessageListPage from "./pages/MessageListPage/MessageListPage";
+import MessageListPage from "./pages/MessageListPage/MessageListPage";
 // import NotFoundPage from "./pages/NotFoundPage/NotFoundPage";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Banner from "./components/Banner/Banner";
