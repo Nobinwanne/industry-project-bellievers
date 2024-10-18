@@ -1,0 +1,35 @@
+@font-face {
+    font-family: "Nanum Gothic";
+    src: url("/src/assets/fonts/Nanum Gothic/NanumGothic-Regular.ttf")
+        format("truetype");
+    font-weight: 400;
+    font-style: normal;
+    font-display: fallback;
+}
+
+@font-face {
+    font-family: "Nanum Gothic";
+    src: url("/src/assets/fonts/Nanum Gothic/NanumGothic-Bold.ttf")
+        format("truetype");
+    font-weight: 600;
+    font-style: normal;
+    font-display: fallback;
+}
+
+@font-face {
+    font-family: "Nanum Gothic";
+    src: url("/src/assets/fonts/Nanum Gothic/NanumGothic-ExtraBold.ttf")
+        format("truetype");
+    font-weight: 900;
+    font-style: normal;
+    font-display: fallback;
+}
+
+@font-face {
+    font-family: "Guld Script";
+    src: url("src/assets/fonts/Script Font/GuldScript_PersonalUseOnly.ttf")
+        format("truetype");
+    font-weight: 900;
+    font-style: normal;
+    font-display: fallback;
+}
