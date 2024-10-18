@@ -21,18 +21,19 @@ function FormPage() {
       const formData = event.target;
 
       const newMoment = {
+        name: formData.name,
         moment: formData.moment,
         message: formData.message,
+        length: formData.length,
         gift: formData.gift,
         recipient: formData.recipient,
-        name: formData.name,
         phone: formData.phone,
-        length: formData.length,
+        timestamp: Date.now(),
       };
 
       console.log(newMoment);
 
-      await axios.post(`http://localhost:8050/moments`, newMoment);
+      await axios.post(`http://localhost:8080/moments`, newMoment);
       setFormData({
         moment: "",
         message: "",
