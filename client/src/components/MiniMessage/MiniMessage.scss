@@ -1,0 +1,68 @@
+@use "/src/styles/partials/mixins" as *;
+@use "/src/styles/partials/variables" as *;
+@use "/src/styles/partials/global" as *;
+@use "/src/styles/partials/animations" as *;
+
+.fade-in {
+    opacity: 0;
+    animation: fadeIn 5s forwards;
+
+    &:nth-child(1) {
+        animation-delay: 0s;
+    }
+    &:nth-child(2) {
+        animation-delay: 2s;
+    }
+    &:nth-child(3) {
+        animation-delay: 0.4s;
+    }
+}
+
+.mini-message {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 60vh;
+    padding: 10rem;
+    background-color: var(--bg-color);
+    box-shadow: 0.5rem 0.5rem 1rem $graphite;
+
+    &__container {
+        text-align: center;
+    }
+
+    &__header {
+        margin-top: 0;
+        font-size: 5rem;
+        letter-spacing: 0.5rem;
+    }
+
+    &__script {
+        font-family: $script;
+        font-size: 19rem;
+        margin: 0;
+        animation: fadeIn 5s forwards, breathe 7000ms infinite forwards;
+    }
+}
+
+.mini-message:nth-child(1) {
+    --bg-color: salmon;
+}
+.mini-message:nth-child(2) {
+    --bg-color: lightblue;
+}
+.mini-message:nth-child(3) {
+    --bg-color: lightgreen;
+}
+.mini-message:nth-child(4) {
+    --bg-color: black;
+}
+.mini-message:nth-child(5) {
+    --bg-color: orange;
+}
+.mini-message:nth-child(6) {
+    --bg-color: lavender;
+}
+.mini-message:nth-child(7) {
+    --bg-color: lightpink;
+}

@@ -22,7 +22,7 @@ function HomePage() {
 
     return (
         <>
-            <Message />
+            <Message script="Breathe." />
             <Footer />
         </>
     );

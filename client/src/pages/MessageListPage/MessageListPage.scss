@@ -1,0 +1,22 @@
+@use "/src/styles/partials/mixins" as *;
+@use "/src/styles/partials/variables" as *;
+@use "/src/styles/partials/global" as *;
+@use "/src/styles/partials/animations" as *;
+
+.gallery {
+    &__wrapper {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        padding: 2rem;
+    }
+
+    &__container {
+        display: flex;
+        justify-content: space-around;
+        flex-wrap: wrap;
+        gap: 2rem;
+        max-width: 1200px;
+        width: 100%;
+    }
+}

@@ -1,6 +1,6 @@
 import "../Message/Message.scss";
 
-function Message() {
+function Message({ script }) {
     return (
         <>
             <article className="message">
@@ -8,7 +8,7 @@ function Message() {
                     <h1 className="message__header fade-in">
                         Take a moment to...
                     </h1>
-                    <p className="fade-in message__script">Breathe.</p>
+                    <p className="fade-in message__script">{script}</p>
                 </section>
             </article>
             <article className="timer">
