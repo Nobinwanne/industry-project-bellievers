@@ -192,6 +192,16 @@ function FormPage() {
                         <option>60 sec</option>
                     </select>
                 </label>
+
+                <label htmlFor="color" className="form__label">
+                    Background Colour
+                    <input
+                        id="color"
+                        type="color"
+                        className="form__input form__input--select form__input--color"
+                        defaultValue="#00549a"
+                    />
+                </label>
             </form>
             <Footer />
         </div>
