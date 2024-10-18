@@ -59,21 +59,3 @@ function MessageListPage() {
 }
 
 export default MessageListPage;
-
-//     {
-//         allCats.map((currentCat, key) => {
-//             return (
-//                 <div key={key}>
-//                     <div>
-//                         <p>{currentCat.id}</p>
-//                         <p>{currentCat.name}</p>
-//                         <p>{currentCat.message}</p>
-//                         <p>{currentCat.gift}</p>
-//                         <p>{currentCat.phone}</p>
-//                     </div>
-//                 </div>
-//             );
-//         })
-//     }
-
-// export default MessageListPage;
