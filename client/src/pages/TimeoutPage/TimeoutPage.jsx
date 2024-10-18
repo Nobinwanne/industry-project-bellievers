@@ -15,24 +15,32 @@ function TimeoutPage() {
     //style button and navigate to forj page
 
     return (
-        <article className="text">
-            <section className="text__container">
-                <h1 className="text__from">Thinking of you. Love, Mom</h1>
-                <p className="text__gift">Gift goes here if there is one</p>
-                <p className="text__stat">
-                    "Everyday ............." - Stats Canada idk
-                </p>
-                <p className="text__resources">add some resource here</p>
-                <button className="text__button">
+        <>
+            <article className="text">
+                <section className="text__container">
+                    <h1 className="text__body">Thinking of you. Love, Mom</h1>
+                    <p className="text__body">Gift goes here if there is one</p>
+                    <p className="text__body">
+                        "Everyday ............." - Stats Canada idk lorem ipsum
+                        fsldafsfdfffffffwfesfesafsae sfsdfsdfsdfsfsdfssb asfba
+                        fas kfsfbsd
+                    </p>
+                    <p className="text__body">add some resource here</p>
+                </section>
+            </article>
+            <article className="static">
+                <button className="static__button">
                     Send Your Mindful Moment
                 </button>
-                <img
-                    src="/src/assets/icons/Bell Let's Talk white.svg"
-                    alt="Bell Let's Talk Logo"
-                    className="text__logo"
-                />
-            </section>
-        </article>
+                <div className="static__img-container">
+                    <img
+                        src="/src/assets/icons/Bell Let's Talk white.svg"
+                        alt="Bell Let's Talk Logo"
+                        className="static__logo"
+                    />
+                </div>
+            </article>
+        </>
     );
 }
 
