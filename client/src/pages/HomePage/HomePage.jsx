@@ -1,6 +1,7 @@
 import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import "../HomePage/HomePage.scss";
+import Message from "../../components/Message/Message";
 
 function HomePage() {
     const navigate = useNavigate();
@@ -18,15 +19,9 @@ function HomePage() {
     // }, [navigate]);
 
     return (
-        <article className="message">
-            <section className="message__container">
-                <h1 className="message__header">Take a moment to...</h1>
-                <p className="message__script">Breathe.</p>
-            </section>
-            <section className="timer">
-                <span className="timer-box"></span>
-            </section>
-        </article>
+        <>
+            <Message />
+        </>
     );
 }
 
