@@ -15,6 +15,7 @@ function FormPage() {
         document.body.style.backgroundColor = color;
     }, [color]);
 
+    //form validation NOT READY
     // const [redirect, setRedirect] = useState(false);
 
     // const inputLabels = ["Warehouse Name", "Street Address", "City", "Country"];
@@ -148,7 +149,6 @@ function FormPage() {
                         <option>Relax</option>
                     </select>
                 </label>
-
                 <label htmlFor="message" className="form__label">
                     Personal Message
                     <textarea
@@ -158,7 +158,6 @@ function FormPage() {
                         placeholder="Write a personalized message"
                     />
                 </label>
-
                 <label htmlFor="gift" className="form__label">
                     Gift
                     <select
@@ -173,7 +172,6 @@ function FormPage() {
                         <option>$5 for Lunch</option>
                     </select>
                 </label>
-
                 <label htmlFor="message" className="form__label">
                     From
                     <input
@@ -183,7 +181,6 @@ function FormPage() {
                         placeholder="Write your name (optional)"
                     />
                 </label>
-
                 <label htmlFor="length" className="form__label">
                     Message Length
                     <select
@@ -198,7 +195,6 @@ function FormPage() {
                         <option>60 sec</option>
                     </select>
                 </label>
-
                 <label htmlFor="color" className="form__label">
                     Background Colour
                     <input
@@ -210,6 +206,9 @@ function FormPage() {
                         onChange={(e) => setColor(e.target.value)}
                     />
                 </label>
+                <div className="form__button-container">
+                    <button className="form__button">Send</button>
+                </div>
             </form>
             <Footer />
         </div>

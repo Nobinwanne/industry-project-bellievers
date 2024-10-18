@@ -54,4 +54,20 @@
             border: 2px solid $bellBlue;
         }
     }
+
+    &__button-container {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+    }
+
+    &__button {
+        @include button;
+        background-color: $bellBlue;
+        color: white;
+
+        &:hover {
+            @include button-hover;
+        }
+    }
 }
