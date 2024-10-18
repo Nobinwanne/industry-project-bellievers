@@ -17,7 +17,7 @@ function TimeoutPage() {
     return (
         <article className="text">
             <section className="text__container">
-                <h1 className="text__from">Thinking of you. Love Mom</h1>
+                <h1 className="text__from">Thinking of you. Love, Mom</h1>
                 <p className="text__gift">Gift goes here if there is one</p>
                 <p className="text__stat">
                     "Everyday ............." - Stats Canada idk

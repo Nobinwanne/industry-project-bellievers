@@ -13,11 +13,11 @@ function HomePage() {
 
     // to redirect user to timeout page after message time is up
     //time will change depending on form submission
-    useEffect(() => {
-        setTimeout(() => {
-            navigate("/timeout");
-        }, 2000);
-    }, [navigate]);
+    // useEffect(() => {
+    //     setTimeout(() => {
+    //         navigate("/timeout");
+    //     }, 2000);
+    // }, [navigate]);
 
     return (
         <>
