@@ -1,229 +1,184 @@
 import { useEffect, useState } from "react";
+import axios from "axios";
 import { Link } from "react-router-dom";
 import "../FormPage/FormPage.scss";
 import Footer from "../../components/Footer/Footer";
 
 function FormPage() {
-    const [color, setColor] = useState("#00549a");
+  const [color, setColor] = useState("#00549a");
+  const [formData, setFormData] = useState({
+    moment: "",
+    message: "",
+    gift: "",
+    recipient: "",
+    name: "",
+    phone: "",
+    length: "",
+  });
 
-    //set document title
-    useEffect(() => {
-        document.title = "Send a Mindful Moment";
-    }, []);
+  const addMoment = async (event) => {
+    try {
+      const formData = event.target;
 
-    useEffect(() => {
-        document.body.style.backgroundColor = color;
-    }, [color]);
+      const newMoment = {
+        moment: formData.moment,
+        message: formData.message,
+        gift: formData.gift,
+        recipient: formData.recipient,
+        name: formData.name,
+        phone: formData.phone,
+        length: formData.length,
+      };
 
-    //form validation NOT READY
-    // const [redirect, setRedirect] = useState(false);
+      console.log(newMoment);
 
-    // const inputLabels = ["Warehouse Name", "Street Address", "City", "Country"];
-    // const inputLabels2 = ["Contact Name", "Position", "Phone Number", "Email"];
+      await axios.post(`http://localhost:8050/moments`, newMoment);
+      setFormData({
+        moment: "",
+        message: "",
+        gift: "",
+        recipient: "",
+        name: "",
+        phone: "",
+        length: "",
+      });
+    } catch (err) {
+      console.error("Failed to send moment", err);
+    }
+  };
 
-    // const [error, setError] = useState({
-    //     warehouseName: "",
-    //     streetAddress: "",
-    //     city: "",
-    //     country: "",
-    //     contactName: "",
-    //     position: "",
-    //     phoneNumber: "",
-    //     email: "",
-    // });
+  const submitHandler = (e) => {
+    e.preventDefault();
+    addMoment();
+    console.log("Moment added");
+  };
 
-    // const [formInput, setFormInput] = useState({
-    //     warehouseName: "",
-    //     streetAddress: "",
-    //     city: "",
-    //     country: "",
-    //     contactName: "",
-    //     position: "",
-    //     phoneNumber: "",
-    //     email: "",
-    // });
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData((prevData) => ({
+      ...prevData,
+      [name]: value,
+    }));
+  };
 
-    // let navigate = useNavigate();
+  // Set document title
+  useEffect(() => {
+    document.title = "Send a Mindful Moment";
+  }, []);
 
-    // function handleTyping(text) {
-    //     return (event) => {
-    //         setFormInput({ ...formInput, [text]: event.target.value });
-    //     };
-    // }
+  //set document title
+  useEffect(() => {
+    document.title = "Send a Mindful Moment";
+  }, []);
 
-    // async function handleFormSubmit(event) {
-    //     event.preventDefault();
+  useEffect(() => {
+    document.body.style.backgroundColor = color;
+  }, [color]);
 
-    //     const newErrors = {};
-    //     let isValid = true;
-    //     function isEmailPattern(email) {
-    //         return /^[^\s@]+@[^\s@]+\.[^\s@]+$/i.test(email);
-    //     }
-    //     function isPhoneNumberPattern(phoneNumber) {
-    //         return /((\+\d{1,2}\s?)?1?\-?\.?\s?\(?\d{3}\)?[\s.-]?)?\d{3}[\s.-]?\d{4}/i.test(
-    //             phoneNumber
-    //         );
-    //     }
-
-    //     Object.keys(formInput).forEach((field) => {
-    //         if (!formInput[field].trim()) {
-    //             newErrors[field] = "This field is required";
-    //             isValid = false;
-    //         }
-
-    //         if (formInput.email && !isEmailPattern(formInput.email)) {
-    //             newErrors.email = "Please enter valid email";
-    //             isValid = false;
-    //         }
-
-    //         if (
-    //             formInput.phoneNumber &&
-    //             !isPhoneNumberPattern(formInput.phoneNumber)
-    //         ) {
-    //             newErrors.phoneNumber = "Please enter valid phone number";
-    //             isValid = false;
-    //         }
-    //     });
-
-    //     setError(newErrors);
-
-    //     if (isValid) {
-    //         try {
-    //             const response = await axios.post(
-    //                 `${baseUrl}warehouses`,
-    //                 formInput
-    //             );
-
-    //             setFormInput({
-    //                 warehouseName: "",
-    //                 streetAddress: "",
-    //                 city: "",
-    //                 country: "",
-    //                 contactName: "",
-    //                 position: "",
-    //                 phoneNumber: "",
-    //                 email: "",
-    //             });
-
-    //             toast.success("Warehouse added successfully", {
-    //                 position: "bottom-right",
-    //                 autoClose: 2000,
-    //             });
-
-    //             setRedirect(true);
-    //         } catch (error) {
-    //             console.log("Error adding new warehouse:", error);
-    //             toast.error("Error adding warehouse", {
-    //                 position: "bottom-right",
-    //                 autoClose: 2000,
-    //             });
-    //         }
-    //     } else {
-    //         console.log("Validation error", newErrors);
-    //     }
-    // }
-
-    // useEffect(() => {
-    //     if (redirect) {
-    //         setTimeout(() => {
-    //             navigate("/warehouse");
-    //         }, 2500);
-    //     }
-    // }, [redirect, navigate]);
-
-    return (
-        <div className="form">
-            <h1 className="form__title">Send A Mindful Moment</h1>
-            <form className="form__box">
-                <label htmlFor="title" className="form__label">
-                    Take a moment to...
-                    <select
-                        id="title"
-                        type="select"
-                        className="form__input form__input--select"
-                    >
-                        <option>Select an Action</option>
-                        <option>Breathe</option>
-                        <option>Smile</option>
-                        <option>Laugh</option>
-                        <option>Relax</option>
-                    </select>
-                </label>
-                <label htmlFor="message" className="form__label">
-                    Personal Message
-                    <textarea
-                        id="message"
-                        type="text area"
-                        className="form__input form__input--tall"
-                        placeholder="Write a personalized message"
-                    />
-                </label>
-                <label htmlFor="gift" className="form__label">
-                    Gift
-                    <select
-                        id="gift"
-                        type="select"
-                        className="form__input form__input--select"
-                    >
-                        <option>Select a Gift (optional)</option>
-                        <option>$5 for Coffee</option>
-                        <option>$5 for Me Time</option>
-                        <option>$5 for a Massage</option>
-                        <option>$5 for Lunch</option>
-                    </select>
-                </label>
-                <label htmlFor="to" className="form__label">
-                    To
-                    <input
-                        id="to"
-                        type="text"
-                        className="form__input"
-                        placeholder="(123) 456 7890"
-                    />
-                </label>
-                <label htmlFor="from" className="form__label">
-                    From
-                    <input
-                        id="from"
-                        type="text"
-                        className="form__input"
-                        placeholder="Write your name (optional)"
-                    />
-                </label>
-                <label htmlFor="length" className="form__label">
-                    Message Length
-                    <select
-                        id="length"
-                        type="select"
-                        className="form__input form__input--select"
-                    >
-                        <option>Select Length of Message</option>
-                        <option>10 sec</option>
-                        <option>30 sec</option>
-                        <option>45 sec</option>
-                        <option>60 sec</option>
-                    </select>
-                </label>
-                <label htmlFor="color" className="form__label">
-                    Background Colour
-                    <input
-                        id="color"
-                        type="color"
-                        className="form__input form__input--select form__input--color"
-                        defaultValue="#00549a"
-                        value={color}
-                        onChange={(e) => setColor(e.target.value)}
-                    />
-                </label>
-                <div className="form__button-container">
-                    <Link to={`/messages`}>
-                        <button className="form__button">Send</button>
-                    </Link>
-                </div>
-            </form>
-            <Footer />
+  return (
+    <div className="form" id="postMoment">
+      <h1 className="form__title">Send A Mindful Moment</h1>
+      <form className="form__box" onSubmit={submitHandler}>
+        <label htmlFor="moment" className="form__label">
+          Take a moment to...
+          <select
+            id="moment"
+            name="moment"
+            value={formData.moment}
+            onChange={handleChange}
+            className="form__input form__input--select"
+          >
+            <option>Select an Action</option>
+            <option>Breathe</option>
+            <option>Smile</option>
+            <option>Laugh</option>
+            <option>Relax</option>
+          </select>
+        </label>
+        <label htmlFor="message" className="form__label">
+          Personal Message
+          <textarea
+            id="message"
+            name="message"
+            value={formData.message}
+            onChange={handleChange}
+            className="form__input form__input--tall"
+            placeholder="Write a personalized message"
+          />
+        </label>
+        <label htmlFor="gift" className="form__label">
+          Gift
+          <select
+            id="gift"
+            name="gift"
+            value={formData.gift}
+            onChange={handleChange}
+            className="form__input form__input--select"
+          >
+            <option>Select a Gift (optional)</option>
+            <option>$5 for Coffee</option>
+            <option>$5 for Me Time</option>
+            <option>$5 for a Massage</option>
+            <option>$5 for Lunch</option>
+          </select>
+        </label>
+        <label htmlFor="to" className="form__label">
+          To
+          <input
+            id="recipient"
+            name="recipient"
+            type="text"
+            value={formData.recipient}
+            onChange={handleChange}
+            className="form__input"
+            placeholder="Recipient's phone number (123) 456 7890"
+          />
+        </label>
+        <label htmlFor="name" className="form__label">
+          From
+          <input
+            id="name"
+            name="name"
+            type="text"
+            value={formData.name}
+            onChange={handleChange}
+            className="form__input"
+            placeholder="Your name (optional)"
+          />
+        </label>
+        <label htmlFor="length" className="form__label">
+          Message Length
+          <select
+            id="length"
+            name="length"
+            value={formData.length}
+            onChange={handleChange}
+            className="form__input form__input--select"
+          >
+            <option>Select Length of Message</option>
+            <option>10 sec</option>
+            <option>30 sec</option>
+            <option>45 sec</option>
+            <option>60 sec</option>
+          </select>
+        </label>
+        <label htmlFor="color" className="form__label">
+          Background Colour
+          <input
+            id="color"
+            type="color"
+            value={color}
+            onChange={handleChange}
+            className="form__input form__input--color"
+          />
+        </label>
+        <div className="form__button-container">
+          <button className="form__button">Send</button>
         </div>
-    );
+      </form>
+      <Footer />
+    </div>
+  );
 }
 
 export default FormPage;

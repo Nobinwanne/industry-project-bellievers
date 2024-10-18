@@ -3,7 +3,6 @@ import { useNavigate } from "react-router-dom";
 import "../HomePage/HomePage.scss";
 import Message from "../../components/Message/Message";
 import Footer from "../../components/Footer/Footer";
-import MessageListPage from "../MessageListPage/MessageListPage";
 
 function HomePage() {
   const navigate = useNavigate();
