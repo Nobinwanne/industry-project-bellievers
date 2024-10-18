@@ -1,2 +1,32 @@
 @use "/src/styles/partials/mixins" as *;
 @use "/src/styles/partials/variables" as *;
+@use "/src/styles/partials/global" as *;
+@use "/src/styles/partials/animations" as *;
+
+body {
+    background-color: $bellBlue;
+    color: white;
+}
+
+.message {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+
+    &__container {
+        text-align: center;
+    }
+
+    &__header {
+        font-size: 5rem;
+        letter-spacing: 0.5rem;
+    }
+
+    &__script {
+        font-family: $script;
+        font-size: 19rem;
+        margin: 0;
+        animation: breathe 7000ms infinite forwards;
+    }
+}

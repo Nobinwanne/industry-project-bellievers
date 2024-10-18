@@ -18,10 +18,15 @@ function HomePage() {
     // }, [navigate]);
 
     return (
-        <div className="not-found">
-            <h1 className="not-found__title">HomePage</h1>
-            <p className="not-found__text">Home</p>
-        </div>
+        <article className="message">
+            <section className="message__container">
+                <h1 className="message__header">Take a moment to...</h1>
+                <p className="message__script">Breathe.</p>
+            </section>
+            <section className="timer">
+                <span className="timer-box"></span>
+            </section>
+        </article>
     );
 }
 
