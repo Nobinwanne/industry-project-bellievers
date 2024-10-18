@@ -1,0 +1,22 @@
+@use "/src/styles/partials/mixins" as *;
+@use "/src/styles/partials/variables" as *;
+@use "/src/styles/partials/global" as *;
+@use "/src/styles/partials/animations" as *;
+
+.form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    &__box {
+        color: $bellDarkBlue;
+        text-transform: uppercase;
+        width: 50%;
+        height: 80%;
+        margin: 5rem 0;
+        border: 1rem $bellDarkBlue solid;
+        padding: 2rem;
+        background-color: white;
+    }
+}
