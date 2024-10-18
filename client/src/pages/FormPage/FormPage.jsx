@@ -126,45 +126,71 @@ function FormPage() {
 
     return (
         <div className="form">
+            <h1 className="form__title">Send A Mindful Moment</h1>
             <form className="form__box">
                 <label htmlFor="title" className="form__label">
                     Take a moment to...
-                    <input
+                    <select
                         id="title"
-                        type="text"
-                        className="form__input"
-                        placeholder="breathe"
-                    />
-                </label>
-
-                <label htmlFor="length" className="form__label">
-                    Message Length
-                    <input
-                        id="length"
-                        type="text"
-                        className="form__input"
-                        placeholder="60sec"
-                    />
+                        type="select"
+                        className="form__input form__input--select"
+                    >
+                        <option>Select an Action</option>
+                        <option>Breathe</option>
+                        <option>Smile</option>
+                        <option>Laugh</option>
+                        <option>Relax</option>
+                    </select>
                 </label>
 
                 <label htmlFor="message" className="form__label">
                     Personal Message
-                    <input
+                    <textarea
                         id="message"
-                        type="text"
-                        className="form__input"
-                        placeholder="personal message"
+                        type="text area"
+                        className="form__input form__input--tall"
+                        placeholder="Write a personalized message"
                     />
                 </label>
 
                 <label htmlFor="gift" className="form__label">
                     Gift
-                    <input
+                    <select
                         id="gift"
-                        type="text"
+                        type="select"
+                        className="form__input form__input--select"
+                    >
+                        <option>Select a Gift (optional)</option>
+                        <option>$5 for Coffee</option>
+                        <option>$5 for Me Time</option>
+                        <option>$5 for a Massage</option>
+                        <option>$5 for Lunch</option>
+                    </select>
+                </label>
+
+                <label htmlFor="message" className="form__label">
+                    From
+                    <input
+                        id="message"
+                        type="text area"
                         className="form__input"
-                        placeholder="add an optional gift"
+                        placeholder="Write your name (optional)"
                     />
+                </label>
+
+                <label htmlFor="length" className="form__label">
+                    Message Length
+                    <select
+                        id="length"
+                        type="select"
+                        className="form__input form__input--select"
+                    >
+                        <option>Select Length of Message</option>
+                        <option>10 sec</option>
+                        <option>30 sec</option>
+                        <option>45 sec</option>
+                        <option>60 sec</option>
+                    </select>
                 </label>
             </form>
             <Footer />

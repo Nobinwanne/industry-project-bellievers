@@ -9,14 +9,45 @@
     justify-content: center;
     align-items: center;
 
+    &__title {
+        margin-bottom: 1.5rem;
+    }
+
     &__box {
         color: $bellDarkBlue;
-        text-transform: uppercase;
         width: 50%;
         height: 80%;
-        margin: 5rem 0;
+        margin-bottom: 4rem;
         border: 1rem $bellDarkBlue solid;
         padding: 2rem;
         background-color: white;
+        box-shadow: 0.5rem 0.5rem 1rem $graphite;
+    }
+
+    &__label {
+        display: block;
+        font-weight: 900;
+        margin-bottom: 0.7rem;
+    }
+
+    &__input {
+        display: block;
+        width: 90%;
+        margin-top: 0.3rem;
+        font-family: $primary-font;
+        color: gray;
+        padding: 0.5rem;
+        border: 1px solid white;
+        border-radius: 0.3rem 0.3rem;
+        background-color: $light-grey;
+
+        &--select {
+            width: 95%;
+        }
+
+        &:focus {
+            outline: none;
+            border: 2px solid $bellBlue;
+        }
     }
 }
