@@ -7,18 +7,18 @@ import FormPage from "./pages/FormPage/FormPage";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 function App() {
-    return (
-        <BrowserRouter>
-            {/* <Header /> */}
-            <Routes>
-                <Route path="/" element={<HomePage />} />
-                <Route path="/timeout" element={<TimeoutPage />} />
-                <Route path="/form" element={<FormPage />} />
-                {/* <Route path="/messages" element={<MessageListPage />} />
-                <Route path="*" element={<NotFoundPage />} /> */}
-            </Routes>
-        </BrowserRouter>
-    );
+  return (
+    <BrowserRouter>
+      {/* <Header /> */}
+      <Routes>
+        <Route path="/" element={<HomePage />} />
+        <Route path="/timeout" element={<TimeoutPage />} />
+        <Route path="/form" element={<FormPage />} />
+        <Route path="/messages" element={<MessageListPage />} />
+        {/* <Route path="*" element={<NotFoundPage />} />  */}
+      </Routes>
+    </BrowserRouter>
+  );
 }
 
 export default App;
