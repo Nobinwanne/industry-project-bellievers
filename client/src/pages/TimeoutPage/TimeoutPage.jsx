@@ -1,5 +1,5 @@
 import { useEffect } from "react";
-import { useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import "../TimeoutPage/TimeoutPage.scss";
 
 function TimeoutPage() {
@@ -11,8 +11,6 @@ function TimeoutPage() {
     //still to do here....
     //fix styling
     //add correct content
-    //add animation so content appears one at a time fade in
-    //style button and navigate to forj page
 
     return (
         <>
@@ -30,9 +28,11 @@ function TimeoutPage() {
             </article>
             <article className="static">
                 <div className="static__button-container">
-                    <button className="static__button">
-                        Send Your Mindful Moment
-                    </button>
+                    <Link to={`/form`}>
+                        <button className="static__button">
+                            Send Your Mindful Moment
+                        </button>
+                    </Link>
                 </div>
                 <div className="static__img-container">
                     <img
