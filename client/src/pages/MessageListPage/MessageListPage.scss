@@ -1,12 +1,13 @@
-body {
-  margin: 2em;
-}
-.form__container {
+.moments {
   display: flex;
   justify-content: center;
   margin: 2em;
-}
 
-.form_name {
-  margin: 2em;
+  &__section {
+    margin: 2em;
+  }
+
+  &__container {
+    margin: 0;
+  }
 }
