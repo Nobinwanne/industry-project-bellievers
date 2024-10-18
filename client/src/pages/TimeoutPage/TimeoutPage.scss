@@ -1,0 +1,18 @@
+@use "/src/styles/partials/mixins" as *;
+@use "/src/styles/partials/variables" as *;
+@use "/src/styles/partials/global" as *;
+
+body {
+    text-align: start;
+}
+
+.text {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+
+    &__logo {
+        max-width: 15rem;
+    }
+}

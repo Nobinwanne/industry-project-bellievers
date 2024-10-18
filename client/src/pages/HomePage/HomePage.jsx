@@ -12,17 +12,19 @@ function HomePage() {
     }, []);
 
     // to redirect user to timeout page after message time is up
-    // useEffect(() => {
-    //     setTimeout(() => {
-    //         navigate("/timeout");
-    //     }, 2000);
-    // }, [navigate]);
+    //time will change depending on form submission
+    useEffect(() => {
+        setTimeout(() => {
+            navigate("/timeout");
+        }, 2000);
+    }, [navigate]);
 
     return (
         <>
             <img
-                src="/src/assets/icons/Bell Let's Talk (1).svg"
+                src="/src/assets/icons/Bell Let's Talk white.svg"
                 alt="Bell Let's Talk Logo"
+                className="logo"
             />
             <Message />
         </>
