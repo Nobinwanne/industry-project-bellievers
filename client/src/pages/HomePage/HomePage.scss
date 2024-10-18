@@ -7,4 +7,10 @@ body {
     background-color: $bellBlue;
     color: white;
     max-height: 100vh;
+    text-align: end;
+}
+
+img {
+    max-width: 15rem;
+    background-image: linear-gradient(white, $bellBlue);
 }

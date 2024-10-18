@@ -20,6 +20,10 @@ function HomePage() {
 
     return (
         <>
+            <img
+                src="/src/assets/icons/Bell Let's Talk (1).svg"
+                alt="Bell Let's Talk Logo"
+            />
             <Message />
         </>
     );

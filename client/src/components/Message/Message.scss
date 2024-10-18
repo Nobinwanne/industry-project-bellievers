@@ -7,7 +7,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 90vh;
+    height: 80vh;
 
     &__container {
         text-align: center;
@@ -38,8 +38,8 @@
         border-radius: 50%;
         height: 1rem;
         width: 1rem;
-        background-color: white;
-        margin: 0 5rem;
+        background-color: black;
+        margin: 2rem 5rem 1rem 5rem;
         opacity: 0;
         animation: timer 60s linear infinite;
 
